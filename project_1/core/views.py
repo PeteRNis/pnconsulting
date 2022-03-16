@@ -12,3 +12,7 @@ def index():
 @core.route('/info')
 def info():
     return render_template('info.html')
+
+@core.route('/contact')
+def contact():
+    return render_template('contact.html')

@@ -25,7 +25,7 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{{ url_for('core.index')}}">Home</a>
         </li>
-        <li class="nav-item">
+        <li id = "testid" class="nav-item">
           <a class="nav-link active" href="{{ url_for('core.info')}}">About</a>
         </li>
         {% if current_user.is_authenticated %}
@@ -87,39 +87,22 @@
     <div class="row">
 
       <div class="col-2">
-        <h5>PN Consulting</h5>
+        <h5>PNC</h5>
         <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Contact</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">App development</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Events</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+          <li class="nav-item mb-2"><a href="{{ url_for('core.contact')}}" class="nav-link p-0 text-muted">Contact</a></li>
+          <li class="nav-item mb-2"><a href="{{ url_for('core.info')}}" class="nav-link p-0 text-muted">About</a></li>
+          {% if current_user.is_authenticated %}
+          <li class="nav-item mb-2"><a href="{{url_for('users.account')}}" class="nav-link p-0 text-muted">Account</a></li>
+          <li class="nav-item mb-2"><a href="{{url_for('blog_posts.create_post')}}" class="nav-link p-0 text-muted">Create post</a></li>
+          <li class="nav-item mb-2"><a href="{{url_for('users.logout')}}" class="nav-link p-0 text-muted">Logout</a></li>
+          {% else %}
+          <li class="nav-item mb-2"><a href="{{url_for('users.login')}}" class="nav-link p-0 text-muted">Login</a></li>
+          <li class="nav-item mb-2"><a href="{{url_for('users.register')}}" class="nav-link p-0 text-muted">Register</a></li>
+          {% endif %}
         </ul>
       </div>
 
-      <div class="col-2">
-        <h5>Cases</h5>
-        <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Build an application</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Build a database</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Integration</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Get data</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Utilize data</a></li>
-        </ul>
-      </div>
-
-      <div class="col-2">
-        <h5>Section</h5>
-        <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
-        </ul>
-      </div>
-
-      <div class="col-4 offset-1">
+      <div class="col-9 offset-1">
         <form>
           <h5>Subscribe to our newsletter</h5>
           <p>Monthly digest of whats new and exciting from us. </p>
