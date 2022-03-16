@@ -1,0 +1,30 @@
+To fix the errors in the original code,
+
+i followed along with the steps here
+https://itsmycode.com/python-importerror-no-module-named-pil-solution/
+
+and i removed check and replaced it with validate
+
+Project organization:
+
+We will have three main components of the project:
+(Project views) [models]
+  1. Core (Index, Info)
+  2. Users (Register, Login, Logout, Account, User Posts) [id, Profile Image, Email, Username, Password, Posts]
+  3. Blog Posts (Create, Update, Delete, Blog Post) [id, User_id, Date, Title, Text]
+
+We need two models, one that is represented in users and one for blog posts.
+
+The models are going to be connected, because the Id is present in both. In that way,
+we can click on a user and see all the block posts they have created.
+
+We will use a blueprint structure, to avoid everything going into the app.py file.
+
+
+
+
+
+{% extends 'base.html' %}
+{% block content %}
+
+{% endblock %}

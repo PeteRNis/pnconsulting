@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<br>
+  <body class="text-center">
+
+  <main class="form-register">
+  <form method= 'POST'>
+    <img class="mb-4" src="static/Logo/logo.png" alt="" width="72" height="57">
+    <h1 class="h3 mb-3 fw-normal">Sign in</h1>
+    {{form.hidden_tag()}}
+    <div align = "left" class="form-group">
+      {{form.email.label}} {{form.email(class="form-control")}}
+    </div>
+    <br>
+    <div align = "left" class="form-group">
+      {{form.password.label}} {{form.password(class="form-control")}}
+    </div>
+    <br>
+    <div class='form-group'>
+    {{form.submit(class = 'btn btn-primary btn-lg')}}
+    </div>
+  </form>
+  </main>
+
+
+{% endblock %}
