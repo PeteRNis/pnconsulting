@@ -8,7 +8,7 @@ import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
-from flask_migrate import Migrate
+#from flask_migrate import Migrate
 from flask_login import LoginManager
 from flask_ckeditor import CKEditor
 
@@ -33,14 +33,14 @@ app.config['SECRET_KEY'] = 'mysecret'
 # to get the basedir, we have to import our operating system, os.
 basedir =os.path.abspath(os.path.dirname(__file__))
 # Old SQLLite db
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///'+os.path.join(basedir,'data.sqlite')
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///'+os.path.join(basedir,'data.sqlite')
 
 # New mysql database
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:Kode0487^*@localhost/mydb'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Kode0487@localhost/our_users'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
-Migrate(app, db)
+#Migrate(app, db)
 
 
 ################################################################################
