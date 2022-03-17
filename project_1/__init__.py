@@ -35,7 +35,7 @@ app.config['SECRET_KEY'] = 'mysecret'
 basedir =os.path.abspath(os.path.dirname(__file__))
 
 # SQLLite db
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///'+os.path.join(basedir,'data.sqlite'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///'+os.path.join(basedir,'data.sqlite'
 
 # New mysql database
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Kode0487@localhost/our_users'
