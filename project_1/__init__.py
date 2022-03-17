@@ -8,7 +8,7 @@ import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
-#from flask_migrate import Migrate
+from flask_migrate import Migrate
 from flask_login import LoginManager
 from flask_ckeditor import CKEditor
 
@@ -40,7 +40,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Kode0487@localhost
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
-#Migrate(app, db)
+migrate = Migrate(app, db)
 
 
 ################################################################################
