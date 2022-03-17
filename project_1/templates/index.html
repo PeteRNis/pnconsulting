@@ -62,7 +62,7 @@
               <img src="" class="bd-placeholder-img card-img-top" width="100%" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: صورة مصغرة" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/>
               <div class="card-body">
                 <h4><a class="card-title" href="  {{ url_for('blog_posts.blog_post', blog_post_id=post.id) }}">{{ post.title }}</a></h4> <br>
-                <p><a class = 'text-muted' href="{{ url_for('users.user_posts', username=post.author.username) }}">Written By: {{ post.author.username }}</a> </p> <br>
+                <p><a class = 'text-muted' href="{{ url_for('users.user_posts', username=post.author.username) }}">By: {{ post.author.username }}</a> </p> <br>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
                     <a class="btn btn-sm btn-outline-secondary" href="  {{ url_for('blog_posts.blog_post', blog_post_id=post.id) }}">View article</a>
