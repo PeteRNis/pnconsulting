@@ -14,7 +14,7 @@
       <h1 class="h3 mb-3 fw-normal">Write a post</h1>
       {{form.hidden_tag()}}
       <div align = "left" class="form-group">
-    
+
       </div>
       <br>
       <div align = "left" class="form-group">
@@ -32,7 +32,8 @@
       </div>
     </form>
     {{ ckeditor.load() }}
- {{ ckeditor.config(name='text') }}
+ {{ ckeditor.config(custom_config="uiColor: '#FFFFFF'", name='text') }}
+
 
   </div>
 </section>

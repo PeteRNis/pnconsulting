@@ -14,7 +14,7 @@
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
     <!-- Navbar content -->
-    <div class="container">
+    <div class="container-fluid">
     <a class="navbar-brand" href="{{ url_for('core.index')}}">PNC</a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,7 +33,7 @@
           <a class="nav-link active" href="{{url_for('users.logout')}}">Log out</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{{url_for('users.account')}}">Account</a>
+          <a class="nav-link active" href="{{url_for('users.user_posts', username=current_user.username)}}">Profile</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" href="{{url_for('blog_posts.create_post')}}">Create post</a>
@@ -69,7 +69,7 @@
 <br>
 <br>
 
-<div class="container py-3">
+<div class="container-fluid">
 
 <main>
 

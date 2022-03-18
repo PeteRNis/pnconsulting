@@ -1,38 +1,54 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<section class="py-5 text-center container">
-  <div class="row py-lg-5">
-    <div class="col-lg-6 col-md-8 mx-auto">
-      <h1 class="fw-light">Welcome to the page for {{user.username}}</h1>
-      <img align='center' src="{{ url_for('static', filename='profile_pics/' + user.profile_image) }}">
-    </div
+<div class="card">
+  <div class="card-head">
+    <div class="py-5 text container">
+      <img align='right' src="{{ url_for('static', filename='profile_pics/' + user.profile_image) }}">
+      <h1 align='left' class="fw-light"><b>{{user.username}}</b></h1>
+      <br>
+      <h5 align='left' class="fw-light"><b>Mail: </b>{{user.email}}</h5>
+      <h5 align='left' class="fw-light"><b>Phone: </b>xxxxxxxxxx</h5>
+      <h5 class="fw-light"><b>About: </b></h5>
+      <p>{{user.about_author}}</p>
+      <br>
+
+      {% if user == current_user %}
+        <a class="btn btn-dark" href="{{url_for('users.account')}}">Edit information</a>
+        <a class="btn btn-dark" href="{{url_for('blog_posts.create_post')}}">Create post</a>
+        {% endif %}
+      </div>
     </div>
-  </section>
+    </div>
 
 
+<br>
+{% for post in blog_posts.items %}
+    <div class="row g-5">
+        <div class="col-md-8">
+          <h2 class="pb-3 border-bottom border-bottom">
+            Blogposts
+          </h2>
 
-    {% for post in blog_posts.items %}
+          <article class="blog-post">
+            <h3 class="blog-post-title"><a href="{{ url_for('blog_posts.blog_post', blog_post_id=post.id) }}">{{ post.title }}</a></h3>
+            <p class="blog-post-meta"><a href="{{ url_for('users.user_posts', username=post.author.username) }}">By: {{ post.author.username }}</a>
+            <p class="text-muted">Published on: {{ post.date.strftime('%Y-%m-%d') }}</p>
+            <p>{{post.text|safe }}</p>
 
-          <div class="row py-lg-5 py-5 text-center container">
-            <div class="col-lg-6 col-md-8 mx-auto">
-              <h2><a href="{{ url_for('blog_posts.blog_post', blog_post_id=post.id) }}">{{ post.title }}</a></h2>
-              <a href="{{ url_for('users.user_posts', username=post.author.username) }}">Written by: {{ post.author.username }}</a>
-              <p class="text-muted">Published on: {{ post.date.strftime('%Y-%m-%d') }}</p>
-            </div>
-          </div>
-              <br>
-              <div class="py-5 text container">
-              <div class="row py-lg-5">
-                <div class="col-lg-6 col-md-8 mx-auto">
-                <p>{{post.text|safe }}</p>
-              <br>
-            </div>
-          </div>
-          </div>
-    {% endfor %}
+            {% if user == current_user %}
+              <a class="btn btn-secondary" href="{{ url_for('blog_posts.update', blog_post_id=post.id) }}">Edit post</a>
+              {% endif %}
+
+          </article>
+
+        </div>
 
 
+      </div>
+{% endfor %}
+<br>
+<br>
   <nav aria-label="Page navigation example">
     <ul class="pagination justify-content-center">
       {% for page_num in blog_posts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
