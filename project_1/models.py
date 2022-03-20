@@ -30,7 +30,7 @@ class User(db.Model, UserMixin):
     profile_image = db.Column(db.String(64), nullable=False, default='3.PNG')
     email = db.Column(db.String(64), unique=True, index=True)
     username = db.Column(db.String(64), unique=True, index=True)
-    about_author = db.Column(db.Text(120), nullable = True)
+    about_author = db.Column(db.Text(), nullable = True)
     password_hash = db.Column(db.String(128))
 
 
