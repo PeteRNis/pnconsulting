@@ -13,10 +13,10 @@
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
         <p>{{post.text|safe}}</p>
-          {% if post.author == current_user %}
-        </div>
-        </div>
-        </div>
+      </div>
+    </div>
+</div>
+{% if post.author == current_user %}
 <div class="py-5 text-center container">
   <div class="row py-lg-5">
     <div class="col-lg-6 col-md-8 mx-auto">
@@ -46,7 +46,7 @@
           <p>Are you sure you want to delete this blog post?</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button action="{{ url_for('blog_posts.blog_post', blog_post_id=post.id) }}" type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
 
           <form action="{{ url_for('blog_posts.delete_post', blog_post_id=post.id) }}" method="POST">
             <input class="btn btn-danger" type="submit" value="Delete">
