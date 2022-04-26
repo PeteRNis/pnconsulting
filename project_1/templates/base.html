@@ -13,7 +13,7 @@
 
 
     <nav >
-      <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+      <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #1c1d1f;">
 
     <!-- Navbar content -->
     <div class="container-fluid">
@@ -29,6 +29,9 @@
         </li>
         <li id = "testid" class="nav-item">
           <a class="nav-link active" href="{{ url_for('core.info')}}">About</a>
+        </li>
+        <li id = "testid" class="nav-item">
+          <a class="nav-link active" href="{{ url_for('core.cases')}}">Cases</a>
         </li>
         {% if current_user.is_authenticated %}
         <li class="nav-item">

@@ -1,7 +1,13 @@
 from project_1.models import BlogPost
-from flask import render_template, request, Blueprint
+from flask import render_template, request, Blueprint, session
+import numpy as np
+import pandas as pd
 
 core = Blueprint('core',__name__)
+
+df = pd.DataFrame({'Abbbbbe': [0, 1, 2, 3, 4],
+                   'Baaaaaanan': [5, 6, 7, 8, 9],
+                   'Cooooow': ['a', 'b', 'c--', 'd', 'e']})
 
 @core.route('/')
 def index():
@@ -16,3 +22,7 @@ def info():
 @core.route('/contact')
 def contact():
     return render_template('contact.html')
+
+@core.route('/cases')
+def cases():
+    return render_template('cases/cases.html',  tables=[df.to_html(classes='data')], titles=df.columns.values)

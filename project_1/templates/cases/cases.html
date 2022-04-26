@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+  <section class="py-5 text-center container">
+  <div class="row py-lg-5">
+    <div class="col-lg-6 col-md-8 mx-auto">
+      <h1 class="fw-light">About</h1>
+      <p class="lead text-muted">This website is built in an attempt to showcase my skills. I have used a mix of python, html and css to create a platform, where i can express my knowledge about tech.</p>
+      <p>
+        {% for table in tables %}
+                    {{titles[loop.index]}}
+                    {{ table|safe }}
+        {% endfor %}
+
+
+      </p>
+    </div>
+  </div>
+  </section>
+
+{% endblock %}
