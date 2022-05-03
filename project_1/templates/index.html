@@ -5,12 +5,12 @@
 
 <link rel="stylesheet" href="static\index1.css">
 
-<div class="container-fluid">
+<div class="container">
 
 
 
 
-<div id="carouselExampleDark" class="carousel carousel slide" data-bs-ride="carousel">
+<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -18,27 +18,27 @@
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active" data-bs-interval="10000">
-      <img src="https://images.unsplash.com/photo-1543286386-2e659306cd6c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="d-block w-100" alt="...">
-      <div class="carousel-caption text-start">
-        <h1 class = 'display-3'>About</h1>
+      <img src="https://lh3.googleusercontent.com/kF0INXBwNymjHlTtFI4spCvOIeV6OO-8PBl_kp7R4J4IXfpXHEn_Vp7lku0WAxa9ERW2mp9mac9hfLyJsSOi9La-NVKPLeuA0LbjrEtOf4-Dim-_96ND7JdzPvL7Efh6zzX1-EHoRA=w2400" class="d-block w-100" alt="...">
+      <div class="carousel-caption gradient-background text-start">
+        <h1 style = "letter-spacing: 1.7px;">ABOUT</h1>
         <p>Learn more about this page</p>
-        <p><a class="btn btn-lg btn-primary" href="{{ url_for('core.info')}}">Visit page</a></p>
+        <p><a class="btn btn-md btn-outline-dark" href="{{ url_for('core.info')}}">Read more</a></p>
       </div>
     </div>
     <div class="carousel-item" data-bs-interval="2000">
-      <img src="https://images.unsplash.com/photo-1633265486064-086b219458ec?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="d-block w-100" alt="...">
-      <div class="carousel-caption">
-        <h1 class = 'display-3'>Contact</h1>
+      <img src="https://lh3.googleusercontent.com/4kmQDMSxMwBQhqGgSEXbHxqqYry_uEO77AK6-jvw3BKPWXCe9Bz4bMAFLHcIS94pOXic1NyuLpK6qabhDbKBjM8vH0MzD_OfWTJXnPeASIpnRoZnbLWOI35oRE-KrHTBlOSxAuNPNg=w2400" class="d-block w-100" alt="...">
+      <div class="carousel-caption text">
+        <h1 style = "letter-spacing: 1.7px;">CONTACT</h1>
         <p>Get in contact with its creator</p>
-        <p><a class="btn btn-lg btn-primary" href="{{ url_for('core.contact')}}">Visit page</a></p>
+        <p><a class="btn btn-md btn-outline-dark" href="{{ url_for('core.contact')}}">Read more</a></p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" class="d-block w-100" alt="...">
+      <img src="https://lh3.googleusercontent.com/rnijMtwU2aACek7sF6yPE5Wc5XGg-XR19t0_k5e3tulxr9r1nSKVkaU5iaawU-l9nuO7ARiqC3MAGWsLr5F9Fcosra8teolmvboxic8X-R3sZ8jA4nX-SwYtyJb5wr5qmAexGnVQpg=w2400" class="d-block w-100" alt="...">
       <div class="carousel-caption text-end">
-        <h1 class = 'display-3'>Contribute</h1>
+        <h1 style = "letter-spacing: 1.7px;">CONTRIBUTE</h1>
         <p>Start writing blog posts today</p>
-        <p><a class="btn btn-lg btn-primary" href="{{url_for('users.login')}}">Visit page</a></p>
+        <p><a class="btn btn-md btn-outline-dark" href="{{url_for('users.login')}}">Read more</a></p>
       </div>
     </div>
   </div>
@@ -57,7 +57,7 @@
   <br>
   <br>
   <br>
-  <h4 class="display-4 text-center">Blogposts</h4>
+  <h3 class="text-center" style = "letter-spacing: 1.7px;">BLOGPOSTS</h3>
   <br>
   <h2 class="border-bottom"></h2>
   <br>
@@ -82,11 +82,11 @@
               <img align='center' src="{{ url_for('static', filename='profile_pics/' + post.author.profile_image) }}" height = "100%" width="100%">
               </a>
               <div class="card-body">
-                <h6 class='display-6'>{{ post.title }}</h6> <br>
+                <h5 style = "letter-spacing: 1.7px;">{{ post.title|upper }}</h5> <br>
                 <p><a class = 'text-muted' href="{{ url_for('users.user_posts', username=post.author.username) }}">By: {{ post.author.username }}</a> </p> <br>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                    <a class="btn btn-sm btn-outline-primary" href="  {{ url_for('blog_posts.blog_post', blog_post_id=post.id) }}">View article</a>
+                    <a class="btn btn-sm btn-outline-dark" href="  {{ url_for('blog_posts.blog_post', blog_post_id=post.id) }}">View article</a>
                   </div>
                   <small class="text-muted">{{post.date.strftime('%d, %B, %Y')}}</small>
                 </div>

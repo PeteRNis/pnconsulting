@@ -11,7 +11,7 @@
 </section>
 <div class="py-5 text container">
     <div class="row py-lg-5">
-      <div class="col-lg-6 col-md-8 mx-auto">
+      <div style="opacity:0.85;" class="col-lg-6 col-md-8 mx-auto">
         <p>{{post.text|safe}}</p>
       </div>
     </div>
@@ -20,8 +20,8 @@
 <div class="py-5 text-center container">
   <div class="row py-lg-5">
     <div class="col-lg-6 col-md-8 mx-auto">
-      <a class="btn btn-secondary" href="{{ url_for('blog_posts.update', blog_post_id=post.id) }}">Update</a>
-       <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#del_modal">Delete</button>
+      <a class="btn btn-md btn-outline-dark" href="{{ url_for('blog_posts.update', blog_post_id=post.id) }}">Update</a>
+       <button type="button" class="btn btn-md btn-outline-dark" data-bs-toggle="modal" data-bs-target="#del_modal">Delete</button>
      </div>
     </div>
     </div>

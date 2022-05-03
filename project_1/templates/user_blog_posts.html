@@ -7,12 +7,14 @@
   <div class="card-head">
     <div class="py-5 text container">
       <img align='right' src="{{ url_for('static', filename='profile_pics/' + user.profile_image) }}">
-      <h3 align='left' class="display-3">{{user.username}}</h3>
+      <h4 align='left'>{{user.username}}</h4>
       <br>
-      <h5 align='left' class="fw-light"><b>Mail: </b>{{user.email}}</h5>
-      <h5 align='left' class="fw-light"><b>Phone: </b>xxxxxxxxxx</h5>
-      <h5 class="fw-light"><b>About: </b></h5>
+      <p align='left' class="fw-light"><b>Mail: </b>{{user.email}}</p>
+      <br>
+      <h6 class="fw-light"><b>About: </b></h6>
+      <div class="col-md-5">
       <p>{{user.about_author}}</p>
+      </div>
       <br>
 
       {% if user == current_user %}
@@ -34,19 +36,22 @@
 
     <div class="row g-5">
         <div class="col-md-8">
-            <h4 class="display-4">Blogposts</h4>
+            <h4>BLOGPOSTS</h4>
             <h2 class="border-bottom"></h2>
 
           {% for post in blog_posts.items %}
           <br>
           <article class="blog-post">
-            <h3 class="blog-post-title"><a href="{{ url_for('blog_posts.blog_post', blog_post_id=post.id) }}">{{ post.title }}</a></h3>
-            <p class="blog-post-meta"><a href="{{ url_for('users.user_posts', username=post.author.username) }}">By: {{ post.author.username }}</a>
+            <h3 class="blog-post-title"><a href="{{ url_for('blog_posts.blog_post', blog_post_id=post.id) }}" style="color: black">{{ post.title }}</a></h3>
+            <p class="blog-post-meta"><a href="{{ url_for('users.user_posts', username=post.author.username) }}" style="color: black">By: {{ post.author.username }}</a>
             <p class="text-muted">Published on: {{ post.date.strftime('%Y-%m-%d') }}</p>
             <p>{{post.text|safe }}</p>
 
             {% if user == current_user %}
               <a class="btn btn-sm btn-outline-dark" href="{{ url_for('blog_posts.update', blog_post_id=post.id) }}">Edit post</a>
+              <br>
+              <br>
+              <br>
               <br>
               {% endif %}
 

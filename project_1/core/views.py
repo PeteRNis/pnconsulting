@@ -5,9 +5,17 @@ import pandas as pd
 
 core = Blueprint('core',__name__)
 
-df = pd.DataFrame({'Abbbbbe': [0, 1, 2, 3, 4],
-                   'Baaaaaanan': [5, 6, 7, 8, 9],
-                   'Cooooow': ['a', 'b', 'c--', 'd', 'e']})
+df = pd.DataFrame({'column 1 ': [4, 6, 1, 3, 7],
+                   'column 2 ': [5, 6, 7, 8, 9],
+                   'column 3 ': [5, 6, 7, 8, 9],
+                   'column 4 ': [5, 6, 7, 8, 9],
+                   'column 5 ': [5, 6, 7, 8, 9],
+                   'column 6 ': [5, 6, 7, 8, 9],
+                   'column 7 ': [5, 6, 7, 8, 9],
+                   'column 8 ': [5, 6, 7, 8, 9],
+                   'column 9 ': [5, 6, 7, 8, 9],
+                   'column 10 ': [5, 6, 7, 8, 9],
+                   'column 11 ': ['a', 'b', 'c', 'd', 'e']})
 
 @core.route('/')
 def index():
