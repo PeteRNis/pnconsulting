@@ -43,10 +43,10 @@
         <li id = "testid" class="nav-item">
           <a class="nav-link active" style = "letter-spacing: 1.7px; text-indent: 35px" href="{{ url_for('core.info')}}">ABOUT</a>
         </li>
-        <br>
+      <br>
         <li id = "testid" class="nav-item">
-          <a class="nav-link active" style = "letter-spacing: 1.7px; text-indent: 35px" href="{{ url_for('core.cases')}}">CASES</a>
-        </li>
+          <a class="nav-link active" style = "letter-spacing: 1.7px; text-indent: 35px" href="{{ url_for('core.contact')}}">CONTACT</a>
+        </li> 
         <br>
         {% if current_user.is_authenticated %}
         <li class="nav-item">
