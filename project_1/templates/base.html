@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <title>PNConsulting</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,7 +47,7 @@
       <br>
         <li id = "testid" class="nav-item">
           <a class="nav-link active" style = "letter-spacing: 1.7px; text-indent: 35px" href="{{ url_for('core.contact')}}">CONTACT</a>
-        </li> 
+        </li>
         <br>
         {% if current_user.is_authenticated %}
         <li class="nav-item">
