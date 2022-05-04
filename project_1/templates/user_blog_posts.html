@@ -9,9 +9,9 @@
       <img align='right' src="{{ url_for('static', filename='profile_pics/' + user.profile_image) }}">
       <h4 align='left'>{{user.username}}</h4>
       <br>
-      <p align='left' class="fw-light"><b>Mail: </b>{{user.email}}</p>
+      <p align='left'><b>Mail: </b>{{user.email}}</p>
       <br>
-      <h6 class="fw-light"><b>About: </b></h6>
+      <h6><b>About: </b></h6>
       <div class="col-md-5">
       <p>{{user.about_author}}</p>
       </div>
@@ -42,8 +42,8 @@
           {% for post in blog_posts.items %}
           <br>
           <article class="blog-post">
-            <h3 class="blog-post-title"><a href="{{ url_for('blog_posts.blog_post', blog_post_id=post.id) }}" style="color: black">{{ post.title }}</a></h3>
-            <p class="blog-post-meta"><a href="{{ url_for('users.user_posts', username=post.author.username) }}" style="color: black">By: {{ post.author.username }}</a>
+            <h3><a href="{{ url_for('blog_posts.blog_post', blog_post_id=post.id) }}" style="color: black">{{ post.title }}</a></h3>
+            <p><a href="{{ url_for('users.user_posts', username=post.author.username) }}" style="color: black">By: {{ post.author.username }}</a>
             <p class="text-muted">Published on: {{ post.date.strftime('%Y-%m-%d') }}</p>
             <p>{{post.text|safe }}</p>
 
@@ -54,7 +54,7 @@
               <br>
               <br>
               {% endif %}
-
+              <h2 class="border-bottom"></h2>
           </article>
           {% endfor %}
 

@@ -3,7 +3,7 @@
 <section class="py-5 text-center container">
   <div class="row py-lg-5">
     <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">{{ post.title }}</h1>
+        <h2>{{ post.title|upper }}</h2>
         <h3 class="lead text-muted">Written by: {{post.author.username}}</h3>
         <p class="lead text-muted">Published: {{post.date.strftime('%d %B %Y')}}</p>
     </div>

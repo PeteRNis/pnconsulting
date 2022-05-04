@@ -4,14 +4,14 @@
 <section class="py-5 text-center container">
 <div class="row py-lg-5">
   <div class="col-lg-6 col-md-8 mx-auto">
-    <h1 class="fw-light"></h1>
-    <h5 class= "display-5"><p>{{current_user.username}}</p></h5>
+    <h1></h1>
+    <h2><p>{{current_user.username}}</p></h2>
     <p>
       <img align = 'center' src="{{url_for('static', filename='profile_pics/'+current_user.profile_image)}}" alt="">
     </p>
   </div>
     <form method= 'POST' action='' enctype='multipart/form-data'>
-      <h1 class="h3 mb-3 fw-normal">Write a post</h1>
+      <h5>Write a post</h5>
       {{form.hidden_tag()}}
       <div align = "left" class="form-group">
 
@@ -32,7 +32,7 @@
       </div>
     </form>
     {{ ckeditor.load() }}
- {{ ckeditor.config(custom_config="uiColor: '#FFFFFF'", name='text') }}
+ {{ ckeditor.config(custom_config="uiColor: ''", name='text') }}
 
 
   </div>

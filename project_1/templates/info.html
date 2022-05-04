@@ -1,12 +1,32 @@
 {% extends 'base.html' %}
 {% block content %}
+<div class="container">
+<img src="https://lh3.googleusercontent.com/a5zYuB71e3bG3SF-xT2CeGpmXGDBSJYKya4OPrBJubZpXG1KZzShoEub5noaZaWAxxMCMt11lGAU54T_gQw79Q-g-E40WLsDtKjQlFdeBtimiAYwhMgFrYvwlD-mV5JOTI13Wx8JDw=w2400" class="d-block w-100" alt="...">
+
+</div>
 
   <section class="py-5 text-center container">
   <div class="row py-lg-5">
     <div class="col-lg-6 col-md-8 mx-auto">
-      <h1 class="fw-light">About</h1>
-      <p class="lead text-muted">This website is built in an attempt to showcase my skills. I have used a mix of python, html and css to create a platform, where i can express my knowledge about tech.</p>
-      <p>
+      <h2 style = "letter-spacing: 1.7px;">ABOUT</h2>
+      <br>
+      <p class="text-muted">This application is built as an attempt to showcase my digital skills. </p>
+      <br>
+      <p class="text-muted">It is developed using an agile methodology and structured using Opbject Oriented Programming (OOP) and a Model View Controller (MVC) design pattern. </p>
+      <br>
+      <p class="text-muted">Python, HTML and CSS is the primary langueges used for the application, but Bootstrap classes has beed added to prettify the expirience. </p>
+      <br>
+      <p class="text-muted">The framework is written in flask, which integrates with a list of other libraries in order to ensure that the user can view and interact with the application</p>
+      <br>
+      <p class="text-muted">Within Python, Werkzeug has been used to authenticate, hash and secure the passwords of the users, and SQLAlchemy has been used as an Object-Relational Mapper ORM for automatic database transfer and storage.</p>
+      <br>
+      <p class="text-muted">The application is currently migrated with PostgreSQL, but it has been migrated with SQLite and MYSQL in the earlier stages of the project</p>
+      <br>
+      <p class="text-muted">The infrastructure is currently provided by Azure, but has been provided by Heroku in the past.</p>
+      <br>
+      <p class="text-muted">Try to create a profile, and take a look around</p>
+        <br>
+        <p>
         <a href="{{url_for('users.register')}}" class="btn btn-md btn-outline-dark">Get started</a>
         <a href="{{url_for('users.login')}}" class="btn btn-md btn-outline-dark">Login</a>
       </p>
@@ -15,14 +35,7 @@
   </section>
   <br>
   <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
+
 
 
 {% endblock %}
