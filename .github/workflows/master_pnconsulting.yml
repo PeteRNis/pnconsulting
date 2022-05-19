@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'pnconsulting'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_38D31F03B0A84C078A9F1648B01ECBA3 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_0C178EC069484CBC8DF8AB217DEE412C }}
